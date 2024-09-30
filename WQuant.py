@@ -1,4 +1,5 @@
 #Python order of operations (PEMDAS)
+import pandas as pd
 a = (((6**3 + 7) * 4) / 16 + 9 - 2)
 print(a)
 
@@ -60,6 +61,40 @@ for x in bogota.values():
 
 #Working with jason file(JSON stands for Java Script Object Notation, and it's a text format for storing and transporting data.) JSON works by creating key-value pairs, where the key is data that can be represented by letters (called a string). JSON values can be strings, numbers, objects, arrays, boolean data, or null.
 
+#You can create a DataFrame from a Python dictionary using from_dict function.
+data = {
+    "col_1": [4, 3, 2, 1, 0],
+    "col_2": ["a", "b", "c", "d", "e"]
+}
+x = pd.DataFrame.from_dict(data)
+print(x)
 
+#We can also let keys to be index instead of the columns
+# the (orient = "index") tells Pandas to treat the keys of the dictionary as the row index in the resulting DataFrame.
+y = pd.DataFrame.from_dict(data, orient = "index")
+print(y)
 
+#We can also specify column names
+z = pd.DataFrame.from_dict(data, orient = "index", columns = ["A","B", "C", "D", "E"])
+print(z)
 
+#Create a DataFrame called using the dictionary clothes and make the keys as index, and put column names as ['color','size']
+clothes = {"shirt": ["red", "M"], "sweater": ["yellow", "L"], "jacket": ["black", "L"]}
+print(pd.DataFrame.from_dict(clothes, orient = "index", columns = ["color", "size"]))
+
+#JSON is short for JavaScript Object Notation. It is another widely used data format to store and transfer the data. It is light-weight and very human readable. In Python, we can use the json library to read JSON files. Here is an example of a JSON string.
+info = """{
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "hobby": "running",
+    "age": 35
+}"""
+print(info)
+
+import json
+data = json.loads(info)
+print(data)
+print(data["firstName"])
+
+#A dictionary may not be as convenient as a `DataFrame` in terms of data manipulation and cleaning. But once we've turned our json string into a dictionary, we can transform it into a `DataFrame` using the `from_dict` method.
+jsdata = pd.DataFrame.from_dict((git))
