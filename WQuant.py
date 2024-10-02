@@ -97,9 +97,13 @@ print(data)
 print(data["firstName"])
 
 #A dictionary may not be as convenient as a `DataFrame` in terms of data manipulation and cleaning. But once we've turned our json string into a dictionary, we can transform it into a `DataFrame` using the `from_dict` method.
-jsdata = pd.DataFrame.from_dict(data)
-print(jsdata)
+
 
 
 df = pd.DataFrame.from_dict(data, orient="index", columns=["subject 1"])
-df
+print(df)
+
+import pandas as pd
+
+df = pd.read_csv("data/colombia-real-estate-1.csv")
+df.head()
