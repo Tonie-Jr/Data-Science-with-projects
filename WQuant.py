@@ -59,7 +59,7 @@ for i in bogota.keys():
 for x in bogota.values():
     print(x)
 
-#Working with jason file(JSON stands for Java Script Object Notation, and it's a text format for storing and transporting data.) JSON works by creating key-value pairs, where the key is data that can be represented by letters (called a string). JSON values can be strings, numbers, objects, arrays, boolean data, or null.
+#Working with jason file(JSON stands for JavaScript Object Notation, and it's a text format for storing and transporting data.) JSON works by creating key-value pairs, where the key is data that can be represented by letters (called a string). JSON values can be strings, numbers, objects, arrays, boolean data, or null.
 
 #You can create a DataFrame from a Python dictionary using from_dict function.
 data = {
@@ -69,7 +69,7 @@ data = {
 x = pd.DataFrame.from_dict(data)
 print(x)
 
-#We can also let keys to be index instead of the columns
+#We can also let keys to be indexed instead of the columns
 # the (orient = "index") tells Pandas to treat the keys of the dictionary as the row index in the resulting DataFrame.
 y = pd.DataFrame.from_dict(data, orient = "index")
 print(y)
@@ -82,7 +82,7 @@ print(z)
 clothes = {"shirt": ["red", "M"], "sweater": ["yellow", "L"], "jacket": ["black", "L"]}
 print(pd.DataFrame.from_dict(clothes, orient = "index", columns = ["color", "size"]))
 
-#JSON is short for JavaScript Object Notation. It is another widely used data format to store and transfer the data. It is light-weight and very human readable. In Python, we can use the json library to read JSON files. Here is an example of a JSON string.
+#JSON is short for JavaScript Object Notation. It is another widely used data format to store and transfer the data. It is light-weight and very human-readable. In Python, we can use the json library to read JSON files. Here is an example of a JSON string.
 info = """{
     "firstName": "Jane",
     "lastName": "Doe",
@@ -92,18 +92,22 @@ info = """{
 print(info)
 
 import json
-data = json.loads(info)
-print(data)
-print(data["firstName"])
+data2 = json.loads(info)
+print(data2)
+print(data2["firstName"])
 
 #A dictionary may not be as convenient as a `DataFrame` in terms of data manipulation and cleaning. But once we've turned our json string into a dictionary, we can transform it into a `DataFrame` using the `from_dict` method.
 
-
-
-df = pd.DataFrame.from_dict(data, orient="index", columns=["subject 1"])
+df = pd.DataFrame.from_dict(data, orient="index", columns=["subject 1", "subject 1", "subject 1", "subject 1", "subject 1"])
 print(df)
 
-import pandas as pd
+#This will create a DataFrame where "Name" and "Age" are the columns.
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df4 = pd.DataFrame.from_dict(data, orient='columns')
+print(df4)
 
-df = pd.read_csv("data/colombia-real-estate-1.csv")
-df.head()
+#This will treat "row1" and "row2" as the row labels (index) and populate the DataFrame accordingly with "Name" and "Age" as columns.
+data = {'row1': {'Name': 'Alice', 'Age': 25},
+        'row2': {'Name': 'Bob', 'Age': 30}}
+df5 = pd.DataFrame.from_dict(data, orient='index')
+print(df5)
