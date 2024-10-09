@@ -103,7 +103,7 @@ print(df)
 
 #This will create a DataFrame where "Name" and "Age" are the columns.
 data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
-df4 = pd.DataFrame.from_dict(data, orient='columns')
+df4 = pd.DataFrame().from_dict(data, orient='columns')
 print(df4)
 
 #This will treat "row1" and "row2" as the row labels (index) and populate the DataFrame accordingly with "Name" and "Age" as columns.
@@ -111,3 +111,21 @@ data = {'row1': {'Name': 'Alice', 'Age': 25},
         'row2': {'Name': 'Bob', 'Age': 30}}
 df5 = pd.DataFrame.from_dict(data, orient='index')
 print(df5)
+
+#the gzip function is used to import compressed files in python
+import gzip
+
+import numpy as np
+
+# Create a 1D numpy array
+a = np.array([1, 2, 3, 4, 5])
+
+# Perform element-wise operations
+b = a * 2
+
+print("Original array:", a)
+print("After multiplication:", b)
+
+# Calculate the mean of the array
+mean_a = np.mean(a)
+print("Mean of the array:", mean_a)
