@@ -119,7 +119,7 @@ import numpy as np
 
 # Create a 1D numpy array
 a = np.array([1, 2, 3, 4, 5])
-
+print(a)
 # Perform element-wise operations
 b = a * 2
 
@@ -129,3 +129,13 @@ print("After multiplication:", b)
 # Calculate the mean of the array
 mean_a = np.mean(a)
 print("Mean of the array:", mean_a)
+
+
+#Importing files in pycharm
+import pandas as pd
+
+# Load the CSV into a DataFrame
+df = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
+
+# Check the first few rows of the data
+print(df.head())
