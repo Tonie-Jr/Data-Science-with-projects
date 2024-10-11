@@ -139,3 +139,14 @@ df = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.c
 
 # Check the first few rows of the data
 print(df.head())
+
+
+# Importing Data from SQL Databases
+import pandas as pd
+import sqlite3  # For SQLite databases
+
+conn = sqlite3.connect('database.db')
+query = "SELECT * FROM table_name"
+
+df = pd.read_sql_query(query, conn)
+conn.close()
