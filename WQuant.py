@@ -139,7 +139,13 @@ df = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.c
 
 # Check the first few rows of the data
 print(df.head())
-
+#Working with pickle files
+clothes = {
+    "shirt" : ["Red", "M"],
+    "sweater" : ["Green", "L"],
+    "jacket" : ["White", "S"]
+}
+print(clothes)
 
 # Importing Data from SQL Databases
 import pandas as pd
@@ -150,3 +156,4 @@ query = "SELECT * FROM table_name"
 
 df = pd.read_sql_query(query, conn)
 conn.close()
+
