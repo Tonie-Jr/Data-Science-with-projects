@@ -139,7 +139,6 @@ df = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.c
 
 # Check the first few rows of the data
 print(df.head())
-df.shape
 df.info()
 #Working with pickle files
 clothes = {
@@ -154,3 +153,7 @@ import pandas as pd
 import sqlite3  # For SQLite databases
 
 
+#Sorting Even though the DataFrame in many ways behaves similarly to a dict, it also is ordered. Therefore we can sort the data in it. Pandas provides two sorting methods, sort_values and sort_index.
+data1 = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
+df.head()
+df.sort_values("area_m2").head()
