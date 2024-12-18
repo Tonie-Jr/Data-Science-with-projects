@@ -1,5 +1,6 @@
 #Python order of operations (PEMDAS)
 import pandas as pd
+
 a = (((6**3 + 7) * 4) / 16 + 9 - 2)
 print(a)
 
@@ -155,5 +156,43 @@ import sqlite3  # For SQLite databases
 
 #Sorting Even though the DataFrame in many ways behaves similarly to a dict, it also is ordered. Therefore we can sort the data in it. Pandas provides two sorting methods, sort_values and sort_index.
 data1 = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
-df.head()
-df.sort_values("area_m2").head()
+data1.head()
+# Floor Division
+print(67//8)
+
+# Bitwise Operators.
+m = 5
+n = 3
+READ_PERMISSION = 4
+WRITE_PERMISSION = 2
+EXECUTE_PERMISSION = 1
+
+#Bitwise AND
+UserPermission = 6
+if (UserPermission & READ_PERMISSION)  == WRITE_PERMISSION:
+    print("Can Read")
+else:
+    print("Cannot Read")
+print(UserPermission & READ_PERMISSION)
+
+#Bitwise OR
+print(m|n) # Output: 7 (Binary: 0111)
+READ_PERMISSION = 4
+WRITE_PERMISSION = 2
+EXECUTE_PERMISSION = 1
+userPermission = READ_PERMISSION | WRITE_PERMISSION
+userPermission |= EXECUTE_PERMISSION
+print(userPermission)
+print(bin(userPermission))
+
+#Bitwise XOR (Exclusive OR)
+print(m^n) #Output: -6 (Invert bits)
+userPermission = READ_PERMISSION | WRITE_PERMISSION
+userPermission ^= WRITE_PERMISSION
+print(f" The new userPermission is: {userPermission} and its binary value is: {bin(userPermission)}")
+
+print(~5) # The not operator gives th opposite value of each of the bit of a number.
+
+#  The Right and Left shift operators shifts the bits either to the left or right of the number depending on the number of the shift you want to shift it.
+print(5<<2)
+print(20>>2)
