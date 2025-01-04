@@ -207,3 +207,18 @@ print(data2.tail())
 print(data3.head())
 print(data4.tail())
 data1.head()
+
+#How to load data into python using the custom functon.
+import pandas as pd
+
+with open("D:\\Study\\WorldQuat Data Science\\Data\\tt.csv", "r") as f:
+    colum_names = f.readline().strip().split(",")
+    data = []
+    for j in f:
+        tt = j.strip().split(",")
+
+        if len(tt) == len(colum_names):  # Append the row only if it matches the expected number of columns
+            data.append(tt)
+df = {colum_names[i]:[row[i] for row in data] for i in range(len(colum_names))}
+df = pd.DataFrame(df)
+print(df)
