@@ -8,7 +8,7 @@ print(a)
 area_m2 = [187, 82, 235]
 print(area_m2)
 
-#accessig the second and last items in the list
+#accessig the second and last items in the list.
 print(area_m2[1])
 print(area_m2[-1])
 
@@ -113,50 +113,6 @@ data = {'row1': {'Name': 'Alice', 'Age': 25},
 df5 = pd.DataFrame.from_dict(data, orient='index')
 print(df5)
 
-#the gzip function is used to import compressed files in python
-import gzip
-
-import numpy as np
-
-# Create a 1D numpy array
-a = np.array([1, 2, 3, 4, 5])
-print(a)
-# Perform element-wise operations
-b = a * 2
-
-print("Original array:", a)
-print("After multiplication:", b)
-
-# Calculate the mean of the array
-mean_a = np.mean(a)
-print("Mean of the array:", mean_a)
-
-
-#Importing files in pycharm
-import pandas as pd
-
-# Load the CSV into a DataFrame
-df = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
-
-# Check the first few rows of the data
-print(df.head())
-df.info()
-#Working with pickle files
-clothes = {
-    "shirt" : ["Red", "M"],
-    "sweater" : ["Green", "L"],
-    "jacket" : ["White", "S"]
-}
-print(clothes)
-
-# Importing Data from SQL Databases
-import pandas as pd
-import sqlite3  # For SQLite databases
-
-
-#Sorting Even though the DataFrame in many ways behaves similarly to a dict, it also is ordered. Therefore we can sort the data in it. Pandas provides two sorting methods, sort_values and sort_index.
-data1 = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
-data1.head()
 # Floor Division
 print(67//8)
 
@@ -196,3 +152,58 @@ print(~5) # The not operator gives th opposite value of each of the bit of a num
 #  The Right and Left shift operators shifts the bits either to the left or right of the number depending on the number of the shift you want to shift it.
 print(5<<2)
 print(20>>2)
+
+
+#the gzip function is used to import compressed files in python
+import gzip
+
+import numpy as np
+
+# Create a 1D numpy array
+a = np.array([1, 2, 3, 4, 5])
+print(a)
+
+# Perform element-wise operations
+b = a * 2
+
+print("Original array:", a)
+print("After multiplication:", b)
+
+# Calculate the mean of the array
+mean_a = np.mean(a)
+print("Mean of the array:", mean_a)
+
+
+#Importing files in pycharm
+import pandas as pd
+
+# Load the CSV file
+df = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
+
+# Check the first few rows of the data
+print(df.head())
+df.info()
+#Working with pickle files
+clothes = {
+    "shirt" : ["Red", "M"],
+    "sweater" : ["Green", "L"],
+    "jacket" : ["White", "S"]
+}
+print(clothes)
+
+# Importing Data from SQL Databases
+import pandas as pd
+
+
+
+#Sorting Even though the DataFrame in many ways behaves similarly to a dict, it also is ordered. Therefore, we can sort the data in it. Pandas provides two sorting methods, sort_values and sort_index.
+
+data1 = pd.read_csv("D:\\Study\\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
+data2 = pd.read_csv(r"D:\\Study\Rapic Tech Skills\\Data Science\\worldometer_data.csv")
+data3 = pd.read_csv(r"D:/Study/Rapic Tech Skills/Data Science/worldometer_data.csv")
+data4 = pd.read_csv("D:/Study/Rapic Tech Skills/Data Science/worldometer_data.csv")
+print(data1.head())
+print(data2.tail())
+print(data3.head())
+print(data4.tail())
+data1.head()
