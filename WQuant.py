@@ -227,8 +227,10 @@ print(df)
 #Dictionary comprehension
 keys = ["a", "b", "c", "d", "e"]
 values = [1, 2, 3, 4, 5]
-my_dict = {k:v for (k,v) in zip(keys, values)} # Using the help of the zip() function
 
+
+my_dict = {k:v for (k,v) in zip(keys, values)} # Using the help of the zip() function
+print(my_dict)
 
 my_dict1 = {keys[i] : values[i] for i in range(len(keys)) }
 print(my_dict1)

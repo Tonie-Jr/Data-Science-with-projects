@@ -1,15 +1,10 @@
-import json
-import pandas as pd
-info = """{"column1": [1, 2, 3, 4, 5], "column2": [66.3, 54.43, 543.4, 543.6, 54334], "column3": [6, 3, 7, 32, 7]}"""
-print(type(info))
+column_row = ["a", "b", "c", "d"]
+row01 = [6, 7, 90, 84]
+row02 = [77, 988, 760, 7788]
+#Dictoionary comprehension
+pickle_dict = {m:n for (m,n) in zip(column_row, row02)}
+print(pickle_dict)
 
-info1 = json.loads(info) #Load json string into python dictionary
-print(type(info1))
-info2 = json.dumps(info1) #Convert the python dictionary into jason string
-print(type(info2))
+import pickle
 
-dataframe1 = pd.DataFrame.from_dict(info1, orient= "index")
-print(dataframe1)
-
-
-
+pickle.dumps(pickle_dict, open("D:\Study\WorldQuat Data Science\Data\pickle files\pickle_dict.pkl", "wr"))
