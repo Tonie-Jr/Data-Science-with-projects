@@ -21,8 +21,10 @@ dictionary = {"names": ["Anto", "Toni", "Tonito"],
 "State" : ["New york", "LA", "Chicago"]
 }
 dictionary1 = pd.DataFrame(dictionary)
+print(dictionary1)
 print(dictionary1.loc[2, "Ages"])
 print(dictionary1.iloc[:, [1,1]])
+print(data.info()) # info() function tells all sorts of things about the data.
+print(data.sort_values("lat"))#
 
-
-
+print(data.set_index("state").sort_index().tail())

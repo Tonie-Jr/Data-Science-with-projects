@@ -287,6 +287,9 @@ print(data.loc[3:10]) #Access the rows for the third to tenth
 print(data.columns) #checking for the dataframe columns
 print(data.size)
 print(data.tail()) #print the last five rows in a data
+print(data.info()) # The info() function tells all sorts of things about the data.
+print(data.sort_values("lat")) #Sort the data by the value latitude of the column
+print(data.set_index("state").sort_index().tail()) #Sort the data by its index.
 
 dictionary = {"names": ["Anto", "Toni", "Tonito"],
 "Ages" : [44, 24, 53],
@@ -295,3 +298,4 @@ dictionary = {"names": ["Anto", "Toni", "Tonito"],
 dictionary1 = pd.DataFrame(dictionary)
 print(dictionary1.loc[2, "Ages"])
 print(dictionary1.iloc[:, [1,1]])
+
