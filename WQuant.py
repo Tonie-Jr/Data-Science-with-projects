@@ -269,6 +269,15 @@ print(data.head()) #Print the first five rows of the data.
 print(data.loc[2]) #print the third row of the data
 print(data["state"])
 
+dictionary = {"names": ["Anto", "Toni", "Tonito"],
+"Ages" : [44, 24, 53],
+"State" : ["New york", "LA", "Chicago"]
+}
+dictionary1 = pd.DataFrame(dictionary)
+print(dictionary1.loc[2, "Ages"])
+print(dictionary1.iloc[:, [1,1]])
+
+
 
 
 import pandas as pd
@@ -290,12 +299,7 @@ print(data.tail()) #print the last five rows in a data
 print(data.info()) # The info() function tells all sorts of things about the data.
 print(data.sort_values("lat")) #Sort the data by the value latitude of the column
 print(data.set_index("state").sort_index().tail()) #Sort the data by its index.
-
-dictionary = {"names": ["Anto", "Toni", "Tonito"],
-"Ages" : [44, 24, 53],
-"State" : ["New york", "LA", "Chicago"]
-}
-dictionary1 = pd.DataFrame(dictionary)
-print(dictionary1.loc[2, "Ages"])
-print(dictionary1.iloc[:, [1,1]])
+print(data.sort_values(by = "lat", ascending=False)) #Sort the column name lat by descending order.
+print(data.sort_values(by = ["lat", "lon", "area_m2", "price_brl"]).head()) #Sort multiple columns
+print(data.sort_values(by = ["lat", "lon", "area_m2"], ascending = [True, False, True], na_position= "first"))#Sort multiple columns with their specification.
 

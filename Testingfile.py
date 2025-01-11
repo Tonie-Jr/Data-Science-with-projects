@@ -1,5 +1,7 @@
 
 import pandas as pd
+
+
 data = pd.read_csv("D:\\Study\\WorldQuat Data Science\\Data\\brasil-real-estate-2.csv", encoding = 'latin1')
 #print(data.head()) #print the first five rows of the data.
 print(data.index[:5]) #This retrieves the index of the DataFrame, which is essentially the row labels. By default, the index is an integer-based range starting from 0. [:5] Slices notation selects the first five elements of the index.
@@ -25,6 +27,10 @@ print(dictionary1)
 print(dictionary1.loc[2, "Ages"])
 print(dictionary1.iloc[:, [1,1]])
 print(data.info()) # info() function tells all sorts of things about the data.
-print(data.sort_values("lat"))#
+print(data.sort_values(by="lat"))#Sort the data by values in our case the latitudes
+print(data.set_index("state").sort_index().tail()) #Sort the data column values by its index
+print(data.sort_values(by = "lat", ascending=False)) #Sort the column name lat by descending order.
+print(data.sort_values(by = ["lat", "lon", "area_m2", "price_brl"]).head()) #Sort multiple columns
+print(data.sort_values(by = ["lat", "lon", "area_m2"], ascending = [True, False, True], na_position= "first"))#Sort multiple columns with their specification.
 
-print(data.set_index("state").sort_index().tail())
+
