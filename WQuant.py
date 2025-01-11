@@ -301,5 +301,8 @@ print(data.sort_values("lat")) #Sort the data by the value latitude of the colum
 print(data.set_index("state").sort_index().tail()) #Sort the data by its index.
 print(data.sort_values(by = "lat", ascending=False)) #Sort the column name lat by descending order.
 print(data.sort_values(by = ["lat", "lon", "area_m2", "price_brl"]).head()) #Sort multiple columns
-print(data.sort_values(by = ["lat", "lon", "area_m2"], ascending = [True, False, True], na_position= "first"))#Sort multiple columns with their specification.
+print(data.sort_values(by = ["lat", "lon", "area_m2"], ascending = [True, False, True], na_position= "first"))#Sort multiple columns with their specification and also NaNs at the beginning.
+print(data.sort_values(by = "state", key = lambda x:x.str.len())) #Custom sorting where sorting is done based on the length of the column name.
+
+
 
