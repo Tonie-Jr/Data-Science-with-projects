@@ -305,6 +305,10 @@ print(data.sort_values(by = ["lat", "lon", "area_m2"], ascending = [True, False,
 print(data.sort_values(by = "state", key = lambda x:x.str.len(), ascending=True)) #Custom sorting where sorting is done based on the length of the column name.
 data["log_lat"] = data["lon"]/data['lat'] #Adding another column to the DataFrame
 print(data.head())
+print(data.drop("state", axis = "columns")) #drop the column for state
+print(data.drop(2, axis = "index")) #Drop the third row in the dataframe
+print(data.dropna(inplace = True)) #
+print(data.dropna(inplace = False)) #
 
 
 
