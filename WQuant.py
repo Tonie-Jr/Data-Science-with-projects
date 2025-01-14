@@ -309,8 +309,8 @@ print(data.sort_values(by = ["lat", "area_m2"], ascending = [True, False], na_po
 print(data.head())
 print(data.drop("state", axis = "columns")) #drop the column for state
 print(data.drop(2, axis = "index")) #Drop the third row in the dataframe
-print(data.dropna(inplace = True)) #
-print(data.dropna(inplace = False)) #
+print(data.dropna(inplace = True)) #Drop null row in a dataframe
+print(data.dropna(inplace = False)) #Drop null row in a dataframe
 
 
 
