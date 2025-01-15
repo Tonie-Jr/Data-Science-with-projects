@@ -33,4 +33,5 @@ print(data.sort_values(by = "lat", ascending=False)) #Sort the column name lat b
 print(data.sort_values(by = ["lat", "lon", "area_m2", "price_brl"]).head()) #Sort multiple columns
 print(data.sort_values(by = ["lat", "lon", "area_m2"], ascending = [True, False, True], na_position= "first"))#Sort multiple columns with their specification.
 
+data[["lat","lon"]] = data["lat-lon"].str.split(",", expand = True)#Splits the lat-lon conlumn to two columns fo lat and lon
 

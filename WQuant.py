@@ -311,6 +311,6 @@ print(data.drop("state", axis = "columns")) #drop the column for state
 print(data.drop(2, axis = "index")) #Drop the third row in the dataframe
 print(data.dropna(inplace = True)) #Drop null row in a dataframe
 print(data.dropna(inplace = False)) #Drop null row in a dataframe
-
+data[["lat","lon"]] = data["lat-lon"].str.split(",", expand = True)#Splits the lat-lon conlumn to two columns fo lat and lon
 
 
